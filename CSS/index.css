@@ -1,0 +1,244 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  
+}
+
+body {
+  background-color: #b9d8f3;
+  color: #333;
+}
+
+.fondo{
+  background-image: url(../IMG/font.jpg);
+  background-size: cover;
+}
+
+/* HERO (incluye imágenes y texto) */
+.hero {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  align-items: center;
+  background-position: center;
+  color: rgb(0, 26, 255);
+  gap: 2rem;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* Blanco semitransparente */
+  z-index: -1;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* HEXÁGONOS */
+.hex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0; /* Puedes probar también con gap: -10px si usas grid */
+}
+
+.hex {
+  width: 140px; /* más pequeño */
+  height: 120px;
+  clip-path: polygon(
+    50% 0%, 
+    93% 25%, 
+    93% 75%, 
+    50% 100%, 
+    7% 75%, 
+    7% 25%
+  );
+  margin: -10px; /* junta más los bordes */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 2px solid #fff;
+}
+
+.hex img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hex1 {
+  transform: translateY(40px);
+}
+.hex2 {
+  transform: translateY(0);
+}
+.hex3 {
+  transform: translateY(40px);
+}
+
+
+
+/* TEXTO HERO */
+.text {
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem;
+}
+
+.text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.text span {
+  color: #000dc9;
+}
+
+.text p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.boton {
+  display: inline-block;
+  background-color: #00aaff;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.boton:hover {
+  background-color: #0077cc;
+}
+
+/* SABÍAS QUE */
+.sabias {
+  padding: 1.5rem;
+  background: #ffffff;
+  text-align: center;
+  max-width: 500px;         
+  margin: 2rem auto;        
+  border-radius: 10px;     
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+  border-left: 3px solid #5930a0;  
+  border-bottom: 3px solid #7e57c2;
+  font-size: 0.95rem;       
+  line-height: 1.5;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.sabias h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.sabias p {
+  font-size: 1rem;
+  color: #444;
+}
+
+
+/* Mejor contraste del texto del carrusel */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 10px;
+  color: #fff !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+}
+
+/*Noticias*/
+.noticias-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(60, 19, 172, 0.884);
+  text-align: center;
+}
+
+.noticias-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.noticia {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(60, 19, 172, 0.884);
+  text-align: left;
+  transition: transform 0.2s;
+  
+}
+
+.noticia:hover {
+  transform: translateY(-5px);
+}
+
+.noticia img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.noticia .fecha {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.noticia h3 {
+  font-size: 1rem;
+  color: #222;
+}
+
+.noticia h3 a {
+  text-decoration: none;
+  color: #003366;
+}
+
+.noticia h3 a:hover {
+  text-decoration: underline;
+}
+.noticias-section{
+  color: #cc5858 !important;
+  text-shadow: 1px 1px 3px rgba(0, 60, 255, 0.8);
+}
