@@ -72,6 +72,12 @@ footer {
   font-size: 1.8rem;
   cursor: pointer;
 }
+.logo img {
+  height: 80px; 
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
