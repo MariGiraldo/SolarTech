@@ -1,42 +1,64 @@
 /* HEADER */
 header {
-  background: #e0f0ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #e0f0ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #0077cc;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0077cc;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center; 
+    margin: 0;
+    padding: 0;
 }
 
-nav a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
+nav li {
+    display: flex;
+    align-items: center;
 }
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse */
+nav a:hover {
+    color: #0077cc;
+}
+
+/* Página activa */
+nav a.active {
+    color: #0077cc;
+    border-bottom: 2px solid #0077cc;
+}
+
 /* FOOTER */
 footer {
-  text-align: center;
-  background: #a5cef5;
-  padding: 1rem;
-  margin-top: 2rem;
+    text-align: center;
+    background: #a5cef5;
+    padding: 1rem;
+    margin-top: 2rem;
 }
+
 .carrusel-principal {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .carousel-inner img {
-  height: 350px;
-  object-fit: cover;
+    height: 350px;
+    object-fit: cover;
 }
