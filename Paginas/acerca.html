@@ -4,34 +4,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SolarTech - acerca</title>
+  <title>SolarTech - Acerca</title>
   <link rel="stylesheet" href="../CSS/acerca.css" />
   <link rel="stylesheet" href="../CSS/general.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-
+  <!-- HEADER -->
   <header>
-    <div class="logo"> <img src="../IMG/logo.png">
-    <strong>🌞SolarTech</strong></div>
+    <div class="logo">
+      <img src="../IMG/logo.png" alt="Logo" class="logo">
+      <strong>🌞SolarTech</strong>
+    </div>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <nav>
       <ul>
         <li><a href="../Paginas/index.html">Inicio</a></li>
         <li><a href="../Paginas/calculadora.html">Calculadora Solar</a></li>
-        <li><a href="../Paginas/graficos.html" >Gráficos Históricos</a></li>
+        <li><a href="../Paginas/graficos.html">Gráficos Históricos</a></li>
         <li><a href="../Paginas/acerca.html" class="active">Acerca de Nosotros</a></li>
       </ul>
     </nav>
   </header>
-  </body>
-<footer>
-  <p>&copy; 2025 SolarTech. Todos los derechos reservados.</p>
-</footer>
+  <section class="fondo">
+    <section class="hero">
+      <!-- ACERCA DE NOSOTROS -->
+      <section class="acerca-container container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold">Acerca de Nosotros</h2>
+            <p class="mt-3">
+              Somos un equipo apasionado por la tecnología y el medio ambiente. Este proyecto nace como parte de nuestro
+              proceso de formación, con el objetivo de aplicar lo aprendido para crear soluciones útiles y con impacto.
+            </p>
+            <p>
+              Creemos en el poder de la energía solar como una alternativa limpia, accesible y sostenible. Esta
+              plataforma busca informar, educar y facilitar el cálculo del consumo energético de manera sencilla.
+              Nuestro compromiso es seguir aprendiendo y desarrollando herramientas que aporten al futuro del planeta.
+            </p>
+          </div>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- EQUIPO -->
+        <div class="row justify-content-center mt-5">
+          <h3 class="text-center fw-bold">Equipo de Trabajo</h3>
+          <p class="text-center">Grupo loscompi_lados</p>
 
+          <!-- Tarjetas de miembros -->
+          <div class="row justify-content-center">
+            <!-- Miembro 1 -->
+            <div class="tarj col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+              <div class="card member-card text-center p-3">
+                <img src="../IMG/camilo.jpg" alt="Camilo" class="imag-fluid rounded-circle mb-3 member-img">
+                <h5 class="fw-bold">Juan Camilo</h5>
+                <p class="small">Dirección de proyecto</p>
+                <p class="small">Coordina al equipo, organiza reuniones, asigna tareas y asegura el cumplimiento de los
+                  objetivos acordados.</p>
+              </div>
+            </div>
+
+            <!-- Miembro 2 -->
+            <div class="tarj col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+              <div class="card member-card text-center p-3">
+                <img src="../IMG/Maria.jpg" alt="María" class="imag-fluid rounded-circle mb-3 member-img">
+                <h5 class="fw-bold">María</h5>
+                <p class="small">Desarrollo Frontend</p>
+                <p class="small">Desarrolla la interfaz del sitio con HTML, CSS, JS y Bootstrap, garantizando
+                  accesibilidad y atractivo visual.</p>
+              </div>
+            </div>
+
+            <!-- Miembro 3 -->
+            <div class="tarj col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+              <div class="card member-card text-center p-3">
+                <img src="../IMG/pablo.jpg" alt="Juan Pablo" class="imag-fluid rounded-circle mb-3 member-img">
+                <h5 class="fw-bold">Juan Pablo</h5>
+                <p class="small">Desarrollo Backend</p>
+                <p class="small">Encargado de la lógica funcional de la página web, soporte técnico, base de datos e
+                  integraciones futuras.</p>
+              </div>
+            </div>
+
+            <!-- Miembro 4 -->
+            <div class="tarj col-md-6 col-lg-3 mb-4 d-flex justify-content-center">
+              <div class="card member-card text-center p-3">
+                <img src="../IMG/Jordana.jpg" alt="Jordana" class="imag-fluid rounded-circle mb-3 member-img">
+                <h5 class="fw-bold">Jordana Pacheco</h5>
+                <p class="small">Documentación</p>
+                <p class="small">Responsable de la redacción y recopilación de documentación del proyecto y contenido
+                  para el usuario.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 SolarTech. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
 </html>
