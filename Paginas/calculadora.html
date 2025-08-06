@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SolarTech - calculadora</title>
+  <title>SolarTech - Calculadora</title>
   <link rel="stylesheet" href="../CSS/calculadora.css" />
   <link rel="stylesheet" href="../CSS/general.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,30 +13,117 @@
 <body>
 
   <header>
-    <div class="logo"> <img src="../IMG/logo.png">
-    <strong>🌞SolarTech</strong></div>
+    <div class="logo">
+      <img src="../IMG/logo.png" alt="Logo SolarTech">
+      <strong>🌞SolarTech</strong>
+    </div>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <nav>
       <ul>
         <li><a href="../Paginas/index.html">Inicio</a></li>
         <li><a href="../Paginas/calculadora.html" class="active">Calculadora Solar</a></li>
-        <li><a href="../Paginas/graficos.html" >Gráficos Históricos</a></li>
+        <li><a href="../Paginas/graficos.html">Gráficos Históricos</a></li>
         <li><a href="../Paginas/acerca.html">Acerca de Nosotros</a></li>
       </ul>
     </nav>
   </header>
-  <section class="fondo">
-  <section class="hero">
+    <section class="fondo">
+<section class="hero">
+      
+<div class="card mb-3 w-100 border-0 rounded-0">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="../IMG/historia.jpg" class="img-fluid rounded-0" alt="Imagen historia">
+    </div>
+    <div class="col-md-8 d-flex align-items-center">
+      <div class="card-body">
+        <h5 class="card-title display-6">Dato histórico</h5>
+        <p class="card-text fs-5">
+Desde tiempos antiguos, el ser humano ha usado el sol para secar alimentos y calentar espacios. En 1839, el físico Edmond Becquerel descubrió el efecto fotovoltaico, lo que permitió convertir la luz solar en electricidad. Con el tiempo, se desarrollaron tecnologías más eficientes, y hoy la energía solar es una fuente clave para un futuro sostenible.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+  <div class="container-fluid px-0">
+  <div class="row m-0">
+    <div class="col-12 p-4">
+      <div class="bg-white p-4 rounded shadow text-center w-100">
+        <h3 class="fw-bold">Calculadora <span>S🌞lar</span></h3>
+        <p class="mb-4">
+          Conocer nuestra participación en el consumo nos ayuda a concientizarnos sobre el impacto que tenemos en el medio ambiente. Esta calculadora nos permite estimar cuántos TWh consumimos a partir del promedio mensual en kWh que ingresas.
+        </p>
+        
+        <div class="row align-items-center justify-content-center">
+
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="../IMG/calculadora.png" alt="Calculadora" class="img-fluid" style="max-width: 150px;">
+          </div>
+
+        
+          <div class="col-md-6">
+            <form id="formularioCalculo">
+              <div class="mb-3 text-start">
+                <label for="consumo" class="form-label fw-semibold">Consumo en Kwh:</label>
+                <input type="number" class="form-control" id="consumo" placeholder="Ej: 450">
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Calcular</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        <div class="container my-5">
+  <div class="row align-items-center">
+    
+    <!-- Columna del formulario -->
+    <div class="col-md-6">
+      <div class="bg-light p-5 rounded-4 shadow text-center">
+        <h4 class="fw-bold mb-4">📩 ¡Quiero más información!</h4>
+        <form>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo" required>
+            <label for="nombre">Nombre Completo</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="correo" placeholder="Correo electrónico" required>
+            <label for="correo">Correo Electrónico</label>
+          </div>
+          <div class="form-floating mb-4">
+            <input type="text" class="form-control" id="ubicacion" placeholder="País - Ciudad" required>
+            <label for="ubicacion">País - Ciudad de Residencia</label>
+          </div>
+          <button type="submit" class="btn btn-success w-100 d-flex align-items-center justify-content-center gap-2">
+            <img src="../IMG/enviar.png" alt="Enviar" style="width: 22px;">
+            <span class="fw-semibold">Enviar </span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img src="../IMG/info.jpg" alt="Energía Solar" class="imagenInfo" >
+    </div>
+  </div>
+</div>
+
+    
   </section>
-  </section>
-  </body>
-<footer>
-  <p>&copy; 2025 SolarTech. Todos los derechos reservados.</p>
-</footer>
+</section>
+  <footer>
+    <p>&copy; 2025 SolarTech. Todos los derechos reservados.</p>
+  </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
 </html>
