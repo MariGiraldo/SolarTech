@@ -62,3 +62,43 @@ footer {
     height: 350px;
     object-fit: cover;
 }
+/* Menú hamburguesa escondido por defecto */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    background: #e0f0ff;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: none;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  #menu-toggle:checked + .menu-icon + nav ul {
+    display: flex;
+  }
+}
