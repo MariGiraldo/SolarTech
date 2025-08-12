@@ -1,11 +1,16 @@
 /* HEADER */
 header {
-    background: #e0f0ff;
+    background: linear-gradient(135deg, #e0f0ff 0%, #bbdefb 50%, #90caf9 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo {
@@ -49,9 +54,11 @@ nav a.active {
 /* FOOTER */
 footer {
     text-align: center;
-    background: #a5cef5;
-    padding: 1rem;
+    background: linear-gradient(135deg, #a5cef5, #81c784);
+    padding: 2rem 1rem;
     margin-top: 2rem;
+    color: white;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .carrusel-principal {
@@ -110,8 +117,12 @@ footer {
 }
 
 .fondo {
-    background-image: url(../IMG/font.jpg);
+    background: linear-gradient(135deg, rgba(227, 242, 253, 0.9), rgba(187, 222, 251, 0.9)), 
+                url(../IMG/font.jpg);
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
 }
 
 /* HERO (incluye imágenes y texto) */
@@ -145,4 +156,144 @@ footer {
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+/* ========== ANIMACIONES GLOBALES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fadeInUp { 
+    animation: fadeInUp 0.8s ease-out; 
+}
+
+.animate-slideInLeft { 
+    animation: slideInLeft 0.8s ease-out; 
+}
+
+.animate-slideInRight { 
+    animation: slideInRight 0.8s ease-out; 
+}
+
+.animate-scaleIn { 
+    animation: scaleIn 0.6s ease-out; 
+}
+
+/* ========== RESPONSIVE IMPROVEMENTS ========== */
+@media (max-width: 1200px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .carousel-inner img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    .hero {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .carousel-inner img {
+        height: 200px;
+    }
+    
+    footer {
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 0.5rem;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    .hero {
+        padding: 0.8rem;
+    }
+    
+    .carousel-inner img {
+        height: 180px;
+    }
+    
+    nav a {
+        padding: 0.3rem;
+        font-size: 0.9rem;
+    }
 }

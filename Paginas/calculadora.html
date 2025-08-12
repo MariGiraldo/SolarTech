@@ -56,22 +56,43 @@ Desde tiempos antiguos, el ser humano ha usado el sol para secar alimentos y cal
           Conocer nuestra participación en el consumo nos ayuda a concientizarnos sobre el impacto que tenemos en el medio ambiente. Esta calculadora nos permite estimar cuántos TWh consumimos a partir del promedio mensual en kWh que ingresas.
         </p>
         
-        <div class="row align-items-center justify-content-center">
-
-          <div class="col-md-4 text-center mb-3 mb-md-0">
-            <img src="../IMG/calculadora.png" alt="Calculadora" class="img-fluid" style="max-width: 150px;">
+        <!-- Loading Screen -->
+        <div id="loading" class="loading-screen">
+          <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h4>🔍 Calculando tu consumo...</h4>
+            <p>Analizando dispositivos y generando recomendaciones solares</p>
           </div>
+        </div>
 
-        
-          <div class="col-md-6">
-            <form id="formularioCalculo">
-              <div class="mb-3 text-start">
-                <label for="consumo" class="form-label fw-semibold">Consumo en Kwh:</label>
-                <input type="number" class="form-control" id="consumo" placeholder="Ej: 450">
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Calcular</button>
-            </form>
+        <!-- Calculadora Interactiva -->
+        <div class="calculadora-section">
+          <div class="text-center mb-4">
+            <img src="../IMG/calculadora.png" alt="Calculadora" class="calculadora-icon animate-bounce">
           </div>
+          
+          <form id="formularioCalculo">
+            <div id="dispositivos-container" class="dispositivos-container mb-4">
+              <!-- Los dispositivos se agregarán dinámicamente aquí -->
+            </div>
+            
+            <div class="text-center mb-4">
+              <button type="button" id="btn-agregar-dispositivo" class="btn btn-outline-primary">
+                ➕ Agregar Otro Dispositivo
+              </button>
+            </div>
+            
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg btn-calcular">
+                🔍 Calcular Consumo y Recomendación Solar
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Resultados -->
+        <div id="resultados" class="resultados-section" style="display: none;">
+          <!-- Los resultados se mostrarán aquí -->
         </div>
 
       </div>
@@ -89,7 +110,7 @@ Desde tiempos antiguos, el ser humano ha usado el sol para secar alimentos y cal
     <div class="col-md-6">
       <div class="bg-light p-5 rounded-4 shadow text-center">
         <h4 class="fw-bold mb-4">📩 ¡Quiero más información!</h4>
-        <form>
+        <form id="formInfo">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo" required>
             <label for="nombre">Nombre Completo</label>
@@ -102,11 +123,15 @@ Desde tiempos antiguos, el ser humano ha usado el sol para secar alimentos y cal
             <input type="text" class="form-control" id="ubicacion" placeholder="País - Ciudad" required>
             <label for="ubicacion">País - Ciudad de Residencia</label>
           </div>
+          <form id="formInfo">
           <button type="submit" class="btn btn-success w-100 d-flex align-items-center justify-content-center gap-2">
             <img src="../IMG/enviar.png" alt="Enviar" style="width: 22px;">
             <span class="fw-semibold">Enviar </span>
           </button>
         </form>
+        <div id="mensaje-confirmacion" style="display:none; margin-top: 10px; color: green; font-weight: bold;">
+          ¡Correo enviado correctamente! Gracias por tu interés.
+        </div>
       </div>
     </div>
 
@@ -124,6 +149,25 @@ Desde tiempos antiguos, el ser humano ha usado el sol para secar alimentos y cal
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../JS/calculadora.js"></script>
+  <script>
+    //script para el formulario de información
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("formInfo");
+    const mensaje = document.getElementById("mensaje-confirmacion");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      mensaje.style.display = "block";
+      form.reset();
+
+      setTimeout(() => {
+        mensaje.style.display = "none";
+      }, 3000);
+    });
+  });
+  </script>
+  
 </body>
 
 </html>
