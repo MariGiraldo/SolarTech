@@ -212,6 +212,7 @@ body {
     color: #cc5858 !important;
     text-shadow: 1px 1px 3px rgba(0, 60, 255, 0.8);
 }
+
 /* RESPONSIVE para la sección de noticias */
 
 @media (max-width: 768px) {
@@ -252,5 +253,169 @@ body {
 
     .noticias-section h2 {
         font-size: 1.5rem;
+    }
+}
+
+/* ===== Estilos de la sección Info Solar ===== */
+.info-solar {
+    padding: 3rem 2rem;
+    background: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+    text-align: center;
+}
+
+.info-solar h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #004e92;
+}
+
+/* Grid para las tarjetas */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjetas con imágenes */
+.card-info {
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: #fff;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+.card-info:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Capa oscura para mejor contraste del texto */
+.card-info::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: inherit;
+    z-index: 0;
+}
+
+/* Contenido de las tarjetas */
+.card-info h3,
+.card-info p,
+.card-info .autor {
+    position: relative;
+    z-index: 1;
+}
+
+.card-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-info p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.card-info .autor {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* Imágenes para cada tarjeta */
+.card-info:nth-child(1) {
+    background-image: url('../IMG/info1.jpg')
+}
+
+.card-info:nth-child(2) {
+    background-image: url('../IMG/info2.jpg')
+}
+
+.card-info:nth-child(3) {
+    background-image: url('../IMG/info3.jpg')
+}
+
+.card-info:nth-child(4) {
+    background-image: url('../IMG/info4.jpg')
+}
+
+.card-info:nth-child(5) {
+    background-image: url('../IMG/info5.jpg')
+}
+
+.card-info:nth-child(6) {
+    background-image: url('../IMG/info6.jpg')
+}
+
+.card-info:nth-child(7) {
+    background-image: url('../IMG/info7.jpg')
+}
+
+.card-info:nth-child(8) {
+    background-image: url('../IMG/info8.jpg')
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: scaleUp 0.3s ease;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
     }
 }
