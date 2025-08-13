@@ -1,187 +1,112 @@
-@media(min-width:791px){
-
-    
-/*contenido*/
-#contenido{
-    width: 100%;
-    min-height: 70vh;
-    min-height: 88vh;
-
-    padding-top: 3%;
-    padding-left: 4%;
-    padding-right: 2%;
-
+/* Fondo general */
+.fondo {
+  background: linear-gradient(135deg, #e0f7fa, #bbdefb);
+  padding: 20px 0;
 }
 
-
-.grafico{
-
-   margin-right: 2%;
-    /* offset-x | offset-y | blur-radius | spread-radius | color */
-   box-shadow: 7px 5px 7px 7px rgba(0, 0, 0, 0.2);
-   cursor: pointer;
-   transition: 1.5s ;
-   overflow: hidden;
-   position: relative;
-   background-color: white;
-   z-index: 1;
-}
-
-/*clase padre de las secciones*/
-
-.grupo1{    
-    display: flex;
-    align-items: center;
-}
-
-.grupo2{
-    padding-top: 1%;
-    text-align: center;
-}
-
-.contenedor-interno{
-    width: 80%;
-    height: 20vh;
-    margin: auto;
-}
-
-/*seccion grafico tabla*/
-.grafico.tabla{
-
-    width: 28%;
-    height: 74vh;
-    float: left;
-    text-align: center;
-    padding-top: 1.5%;
-
-}
-
-.table{
-    margin-left: 10%;
-    width: 80%;
-    margin: auto;
-    border: 1.5px solid black;
-}
-
-th{
-    border: 1.5px solid black;
-}
-
-
-/*seccion grafico torta*/
-.grafico.torta{
-
-    width: 38%;
-    height: 35vh;
-    float: left;
-}
-
-
-
-#grafico-torta{
-    width: 50%;
-    height: 30vh;
-    padding: 0%;
-    margin-left: 9%;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-h1{
-    margin-top: 10%;
-}
-
-
-/*seccion grafico linea*/
-.grafico.linea{
-
-    width: 28%;
-    height: 35vh;
-    float: right;
-    
-    
-}
-
-
-
-/* seccion grafico barra*/
-.grafico.barra{
-    width: 28%;
-    height: 35vh;
-    float: left;
-    margin-top: 2%;
-    
-}
-
-
-/*seccion grafico area*/
-.grafico.area{
-
-    width: 38%;
-    height: 35vh;
-    float: right;
-    margin-top: 2%;
-    
-}
-
-#grafico-area{
-    width: 40%;
-    height: 30vh;
-    margin-left: 9%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 5%;
-}
-
-
-
-/* efecto de agrandado de las secciones*/
-.grafico:hover{
-    
-    z-index: 2;
-    transform: scale(1.1);
-    /* offset-x | offset-y | blur-radius | spread-radius | color */
-   box-shadow: 7px 5px 7px 10px rgba(0, 0, 0, 0.2);
-
-}
-
-}
-
-.grupo2.grafico.area {
-  max-width: 600px;  /* ancho máximo deseado */
-  margin: 0 auto;    /* centra el div horizontalmente */
-}
-
-.container {
-  max-width: 700px;       /* Ancho máximo del contenedor general */
-  margin: 20px auto;      /* Centrar horizontalmente con margen vertical */
-  padding: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.grupo2.grafico.area {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+/* Contenedor flex: tabla izquierda, gráficos derecha */
+.contenedor-graficos {
+  display: flex;
+  gap: 20px;
   padding: 20px;
-  width: 100%;            /* Ocupa todo el ancho del container */
-  height: 420px;          /* Altura fija para controlar tamaño del gráfico */
+  flex-wrap: wrap;
+}
+
+/* Tabla */
+.grafico.tabla {
+  flex: 1 1 25%;
+  min-width: 300px;
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+/* Contenedor de los gráficos a la derecha */
+.graficos-derecha {
+  flex: 1 1 70%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-.grupo2.grafico.area h2 {
-  font-weight: 600;
-  color: #333;
-  margin: 0;
+/* Todos los gráficos */
+.grafico.linea, .grafico.area, .grafico.barras {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  height: 350px;
 }
 
-.grupo2.grafico.area canvas {
-  flex: 1;                /* Ocupa todo el espacio disponible en el contenedor */
+/* Canvas y chart-box del mismo tamaño */
+.grafico canvas, .chart-box {
   width: 100% !important;
   height: 100% !important;
-  display: block;
-  border-radius: 6px;
+}
+
+/* Hover efecto */
+.grafico:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Titulos gráficos */
+.grafico h3 {
+  margin-bottom: 10px;
+  color: #0d47a1;
+  font-weight: bold;
+  text-align: center;
+}
+/* Fondo general */
+.fondo {
+    background: linear-gradient(135deg, #e0f7fa, #bbdefb);
+    padding: 20px 0;
+}
+
+/* Título */
+.hero h1 {
+    color: #0d47a1;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Subtítulo */
+.hero p {
+    font-size: 1.1rem;
+    color: #1565c0;
+}
+
+/* Contenedor del gráfico */
+.container {
+    max-width: 850px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover en el contenedor */
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Canvas del gráfico */
+canvas {
+    max-width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #0d47a1;
+    color: white;
+}
+
+/* Efecto de brillo dinámico */
+.glow {
+    filter: drop-shadow(0px 0px 8px rgba(54, 162, 235, 0.8));
 }

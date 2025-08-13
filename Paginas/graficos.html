@@ -3,26 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SolarTech - graficos</title>
+  <title>SolarTech - Gráficos</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../CSS/graficos.css" />
   <link rel="stylesheet" href="../CSS/general.css" />
   <link rel="stylesheet" href="../CSS/Navegador_Grafico.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
-  <!-- Implementación gráficos -->
+  <!-- JS Gráficos -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
 
+  <!-- HEADER / NAVEGACIÓN -->
   <header>
     <div class="logo">
-      <img src="../IMG/logo.png">
+      <img src="../IMG/logo.png" alt="Logo SolarTech">
       <strong>🌞SolarTech</strong>
     </div>
+
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
     <nav>
       <ul>
         <li><a href="../Paginas/index.html">Inicio</a></li>
@@ -33,60 +37,110 @@
     </nav>
   </header>
 
+  <!-- SECCIÓN HERO / CONTENIDO -->
   <section class="fondo">
-    <section class="hero"></section>
+    <section class="hero">
+      <main id="contenido" class="container my-4">
+        <div class="row">
+
+          <!-- LADO IZQUIERDO: TABLA -->
+          <div class="col-md-4">
+            <div class="grafico tabla" id="asdf" onclick="redirect_tabla()">
+              <h3>Tabulación</h3> 
+              <table class="table table-striped">
+                <thead class="table-dark">
+                  <tr>
+                    <th>Energia Solar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>%-</td></tr>
+                  <tr><td>%-</td></tr>
+                  <tr><td>%-</td></tr>
+                  <tr><td>%-</td></tr>
+                  <tr><td>%-</td></tr>
+                  <tr><td>%-</td></tr>
+                  <tr><td>%-</td></tr>
+                  <tr><td>%-</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- LADO DERECHO: GRÁFICOS -->
+          <div class="col-md-8">
+
+            <!-- Gráfico Línea -->
+            <div class="grupo2 grafico linea" onclick="abrirModal('myChart')">
+              <h2>Gráfico línea</h2>
+              <canvas id="myChart"></canvas>
+            </div>
+
+            <!-- Gráfico Área -->
+            <div class="grupo2 grafico area mb-4" onclick="abrirModal('myAreaChart')">
+              <h2>Gráfico de Área</h2>
+              <canvas id="myAreaChart"></canvas>
+            </div>
+
+            <!-- Gráfico de Barras -->
+            <div class="grupo2 grafico barras mb-4" onclick="abrirModal('solarChart')">
+              <h2>Producción Solar (TWh)</h2>
+              <canvas id="solarChart"></canvas>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </section>
   </section>
 
-  <div id="secundario"></div>
-
-  <main id="contenido">
-
-    <div class="grafico tabla" id="asdf" onclick="redirect_tabla()">
-      <h3>Tabulación</h3> 
-      <table class="table">
-        <thead class="table-dark">
-          <tr><th>Energia solar</th></tr>
-        </thead>
-        <tbody>
-          <tr><th>%-</th></tr>
-          <tr><th>%-</th></tr>
-          <tr><th>%-</th></tr>
-          <tr><th>%-</th></tr>
-          <tr><th>%-</th></tr>
-          <tr><th>%-</th></tr>
-          <tr><th>%-</th></tr>
-          <tr><th>%-</th></tr>
-        </tbody>
-      </table>
+  <!-- MODAL PARA AMPLIAR GRÁFICOS -->
+  <div class="modal fade" id="graficoModal" tabindex="-1" aria-labelledby="graficoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="graficoModalLabel">Gráfico Ampliado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <canvas id="modalChart" style="width:100%; height:400px;"></canvas>
+        </div>
+      </div>
     </div>
-
-    <div class="grupo2 grafico linea" onclick="redirect_linea()">
-      <h2>Gráfico línea</h2>
-      <div class="contenedor-interno" id="graficolinea"></div>
-    </div>
-
-    <!-- Gráfico de Área -->
-     <div class="container">
-      <div class="grupo2 grafico area">
-  <h2>Gráfico de Área</h2>
-  <canvas id="myAreaChart"></canvas>
   </div>
 
-     </div>
-    
+  <!-- FOOTER -->
+  <footer class="text-center py-3">
+    <p>&copy; 2025 SolarTech. Todos los derechos reservados.</p>
+  </footer>
 
-
-  </main>
-
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="../JS/vistatabla.js"></script>
-  <script src="../JS/grafico-area.js"></script> 
+  <script src="../JS/grafico-area.js"></script>
+  <script src="../JS/grafico-barras.js"></script>
+  <script src="../JS/Grafico_linea.js"></script>
+
+  <!-- SCRIPT MODAL -->
+  <script>
+    let modalChartInstance;
+    function abrirModal(chartId) {
+      const originalCanvas = document.getElementById(chartId);
+      const modalCanvas = document.getElementById("modalChart");
+
+      if (modalChartInstance) modalChartInstance.destroy();
+
+      const chartConfig = Chart.getChart(originalCanvas).config;
+      modalChartInstance = new Chart(modalCanvas, {
+        type: chartConfig.type,
+        data: chartConfig.data,
+        options: chartConfig.options
+      });
+
+      const modal = new bootstrap.Modal(document.getElementById('graficoModal'));
+      modal.show();
+    }
+  </script>
+
 </body>
-
-<footer>
-  <p>&copy; 2025 SolarTech. Todos los derechos reservados.</p>
-</footer>
-
 </html>

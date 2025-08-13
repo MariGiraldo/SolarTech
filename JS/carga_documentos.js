@@ -59,3 +59,25 @@ async function carga_documento() {
    })
 
 }
+let modalChartInstance;
+
+function abrirModal(chartId) {
+  // Copiar datos del gráfico actual al modal
+  const originalCanvas = document.getElementById(chartId);
+  const modalCanvas = document.getElementById("modalChart");
+  
+  // Destruir instancia previa si existía
+  if(modalChartInstance) modalChartInstance.destroy();
+
+  // Copiar configuración del gráfico
+  const chartConfig = Chart.getChart(originalCanvas).config;
+  modalChartInstance = new Chart(modalCanvas, {
+    type: chartConfig.type,
+    data: chartConfig.data,
+    options: chartConfig.options
+  });
+
+  // Abrir modal
+  const modal = new bootstrap.Modal(document.getElementById('graficoModal'));
+  modal.show();
+}
