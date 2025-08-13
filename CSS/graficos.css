@@ -146,3 +146,42 @@ h1{
 }
 
 }
+
+.grupo2.grafico.area {
+  max-width: 600px;  /* ancho máximo deseado */
+  margin: 0 auto;    /* centra el div horizontalmente */
+}
+
+.container {
+  max-width: 700px;       /* Ancho máximo del contenedor general */
+  margin: 20px auto;      /* Centrar horizontalmente con margen vertical */
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grupo2.grafico.area {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  padding: 20px;
+  width: 100%;            /* Ocupa todo el ancho del container */
+  height: 420px;          /* Altura fija para controlar tamaño del gráfico */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.grupo2.grafico.area h2 {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.grupo2.grafico.area canvas {
+  flex: 1;                /* Ocupa todo el espacio disponible en el contenedor */
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  border-radius: 6px;
+}

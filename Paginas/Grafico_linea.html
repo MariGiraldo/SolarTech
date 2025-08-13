@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,7 @@
     <!--fin implementacion graficos google-->
 
     <link rel="stylesheet" href="../CSS/Grafico_linea.css">
+    <link rel="stylesheet" href="../CSS/graficos.css">
     
 
     <script src="../JS/carga_documentos.js"></script>
@@ -36,11 +37,22 @@
 
     <div id="grafico" class="tamano">
 
-      <h2>Grafico de España</h2>
+      <h2>Gráfico de España</h2>
       <canvas id="myChart" ></canvas>
       
 
     </div><!--fin de grafico-->
+
+      <div class="container">   
+        <div class="grupo2 grafico area">
+          <h2>Gráfico de Área</h2>
+          <canvas id="myAreaChart"></canvas>
+        </div>
+
+      </div>
+    
+
+
       
     <div id="tabulacion" class="tamano overflow">
       <table class="table">
@@ -55,9 +67,11 @@
   </main>
 
   <!--implementacion libreria chart-->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
-  <!-- fin implementacion libreria chart-->
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
   <script src="../JS/Grafico_linea.js"></script>
+  <script src="../JS/grafico-area.js"></script>
+
     
 </body>
 <footer></footer>
