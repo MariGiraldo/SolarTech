@@ -1,6 +1,6 @@
 /*barra de navegacion interna de la pagina tabla*/
 
-#barra-navegador-graficos{
+#barra-navegador-graficos {
     width: 80%;
     margin-left: 10%;
     margin-top: 1%;
@@ -10,33 +10,33 @@
 
 /* diseño botones*/
 
-@media(max-width:504px){
-    .btn-barra{
+@media(max-width:504px) {
+    .btn-barra {
         width: 100%;
         margin-top: 1%;
         margin-bottom: 1%;
         border-radius: 6px;
-        background:linear-gradient(#f3ecdb,#b3ab98) ;
+        background: linear-gradient(#f3ecdb, #b3ab98);
     }
 }
 
-@media(min-width:505px){
-    .btn-barra{
+@media(min-width:505px) {
+    .btn-barra {
         width: 15%;
         border-radius: 6px;
-        background:linear-gradient(#f3ecdb,#b3ab98) ;
+        background: linear-gradient(#f3ecdb, #b3ab98);
     }
-    
+
 }
 
-    
-.btn-barra:hover{
-    background:linear-gradient(#d6cdb6,white) ;
+
+.btn-barra:hover {
+    background: linear-gradient(#d6cdb6, white);
 }
 
 /* diseño de las tablas generalizado*/
 
-table{
+table {
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;
@@ -51,18 +51,19 @@ thead {
 
 }
 
-th{
+th {
     border: 1px solid black;
     cursor: pointer;
 }
 
-tr:hover, th:hover{
+tr:hover,
+th:hover {
     background: rgb(162, 158, 158);
 }
 
 /*estilo del scroll para las tablas*/
 
-.overflow::-webkit-scrollbar{
+.overflow::-webkit-scrollbar {
 
     width: 10px;
     height: 10px;
@@ -71,13 +72,13 @@ tr:hover, th:hover{
 
 }
 
-.overflow::-webkit-scrollbar-thumb{
+.overflow::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgb(166, 172, 172);
-    
+
 }
 
 /*canvas*/
-canvas{
+canvas {
     width: 100%;
 }

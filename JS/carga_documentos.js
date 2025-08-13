@@ -1,5 +1,5 @@
 
-const doc_14= "../Recursos/documentacion/Info_general/14_solar-share-energy.csv"
+const doc_14 = "../Recursos/documentacion/Info_general/14_solar-share-energy.csv"
 
 
 
@@ -10,21 +10,21 @@ async function carga_documento() {
    const tbody = document.getElementById("cuerpo") // obtiene el cuerpo de la tabla
    const titulos = document.querySelector("#encabezado")
 
-   
+
    const datos = await fetch(doc_14)
-   const texto= await datos.text() 
+   const texto = await datos.text()
 
    const separador = texto.split("\n")
-   const cuerpo = separador.slice(4486,4497)
+   const cuerpo = separador.slice(4486, 4497)
 
    //crea los encabezados
 
    titulos.replaceChildren("")
    const encabezado = separador[0].split(",") // toma la primela linea del archivo y separa los datos cade que encuentra una ","
 
-   for(var i=0; i<= encabezado.length;i++){
+   for (var i = 0; i <= encabezado.length; i++) {
 
-      if(i!= encabezado.length){
+      if (i != encabezado.length) {
          const columnas = document.createElement("th")
 
          const nodo = document.createTextNode(encabezado[i])
@@ -35,22 +35,22 @@ async function carga_documento() {
 
 
       }
-        
+
    }
 
    // recorre los datos y los inserta
 
    tbody.replaceChildren("")
 
-   cuerpo.forEach((separador)=>{
+   cuerpo.forEach((separador) => {
       const columnas = separador.split(",")// esto separa cada columna de cada linea del archivo
 
-      const fila= document.createElement("tr")
+      const fila = document.createElement("tr")
 
-      columnas.forEach((dato)=>{
+      columnas.forEach((dato) => {
 
          const celda = document.createElement("th");
-         celda.textContent = dato.trim(); 
+         celda.textContent = dato.trim();
          fila.appendChild(celda);
 
       })
@@ -62,22 +62,22 @@ async function carga_documento() {
 let modalChartInstance;
 
 function abrirModal(chartId) {
-  // Copiar datos del gráfico actual al modal
-  const originalCanvas = document.getElementById(chartId);
-  const modalCanvas = document.getElementById("modalChart");
-  
-  // Destruir instancia previa si existía
-  if(modalChartInstance) modalChartInstance.destroy();
+   // Copiar datos del gráfico actual al modal
+   const originalCanvas = document.getElementById(chartId);
+   const modalCanvas = document.getElementById("modalChart");
 
-  // Copiar configuración del gráfico
-  const chartConfig = Chart.getChart(originalCanvas).config;
-  modalChartInstance = new Chart(modalCanvas, {
-    type: chartConfig.type,
-    data: chartConfig.data,
-    options: chartConfig.options
-  });
+   // Destruir instancia previa si existía
+   if (modalChartInstance) modalChartInstance.destroy();
 
-  // Abrir modal
-  const modal = new bootstrap.Modal(document.getElementById('graficoModal'));
-  modal.show();
+   // Copiar configuración del gráfico
+   const chartConfig = Chart.getChart(originalCanvas).config;
+   modalChartInstance = new Chart(modalCanvas, {
+      type: chartConfig.type,
+      data: chartConfig.data,
+      options: chartConfig.options
+   });
+
+   // Abrir modal
+   const modal = new bootstrap.Modal(document.getElementById('graficoModal'));
+   modal.show();
 }

@@ -35,11 +35,11 @@ function mostrarLoading(mostrar) {
 function agregarDispositivo() {
     contadorDispositivos++;
     const dispositivosContainer = document.getElementById('dispositivos-container');
-    
+
     const dispositivoDiv = document.createElement('div');
     dispositivoDiv.className = 'dispositivo-card animate-slideIn';
     dispositivoDiv.id = `dispositivo-${contadorDispositivos}`;
-    
+
     dispositivoDiv.innerHTML = `
         <div class="dispositivo-header">
             <h4>🔌 Dispositivo ${contadorDispositivos}</h4>
@@ -86,9 +86,9 @@ function agregarDispositivo() {
             </div>
         </div>
     `;
-    
+
     dispositivosContainer.appendChild(dispositivoDiv);
-    
+
     // animacion inicial
     setTimeout(() => {
         dispositivoDiv.classList.add('visible');
@@ -99,7 +99,7 @@ function agregarDispositivo() {
 function eliminarDispositivo(id) {
     const dispositivo = document.getElementById(`dispositivo-${id}`);
     dispositivo.classList.add('animate-fadeOut');
-    
+
     setTimeout(() => {
         dispositivo.remove();
         actualizarNumeracion();
@@ -119,7 +119,7 @@ function actualizarNumeracion() {
 function actualizarPotencia(id) {
     const tipoSelect = document.getElementById(`tipo-${id}`);
     const potenciaInput = document.getElementById(`potencia-${id}`);
-    
+
     const tipoSeleccionado = tipoSelect.value;
     if (electrodomesticos[tipoSeleccionado]) {
         potenciaInput.value = electrodomesticos[tipoSeleccionado];
@@ -135,26 +135,26 @@ function actualizarPotencia(id) {
 // Calculo
 function calcularConsumo() {
     mostrarLoading(true);
-    
+
     setTimeout(() => {
         const dispositivos = document.querySelectorAll('.dispositivo-card');
         let consumoTotalMensual = 0;
         let resultadosDetallados = [];
-        
+
         dispositivos.forEach((dispositivo, index) => {
             const id = dispositivo.id.split('-')[1];
-            
+
             const cantidad = parseInt(document.getElementById(`cantidad-${id}`).value) || 0;
             const tipo = document.getElementById(`tipo-${id}`).value;
             const horas = parseFloat(document.getElementById(`horas-${id}`).value) || 0;
             const dias = parseInt(document.getElementById(`dias-${id}`).value) || 0;
             const potencia = parseInt(document.getElementById(`potencia-${id}`).value) || 0;
-            
+
             if (tipo && potencia > 0) {
-                const consumoDiario = (cantidad * potencia * horas) / 1000; 
+                const consumoDiario = (cantidad * potencia * horas) / 1000;
                 const consumoMensual = consumoDiario * dias;
                 consumoTotalMensual += consumoMensual;
-                
+
                 resultadosDetallados.push({
                     dispositivo: tipo,
                     cantidad: cantidad,
@@ -163,7 +163,7 @@ function calcularConsumo() {
                 });
             }
         });
-        
+
         mostrarResultados(consumoTotalMensual, resultadosDetallados);
         mostrarLoading(false);
     }, 1500);
@@ -174,13 +174,13 @@ function mostrarResultados(consumoTotal, detalles) {
     const resultadosDiv = document.getElementById('resultados');
     const consumoAnual = consumoTotal * 12;
     const consumoTWh = consumoAnual / 1000000;
-    
+
     // Recomendacion
-    const panelesSolares = Math.ceil(consumoTotal / 120); 
-    const costoSistema = panelesSolares * 300; 
-    const ahorroMensual = consumoTotal * 0.12; 
+    const panelesSolares = Math.ceil(consumoTotal / 120);
+    const costoSistema = panelesSolares * 300;
+    const ahorroMensual = consumoTotal * 0.12;
     const tiempoRecuperacion = (costoSistema / (ahorroMensual * 12)).toFixed(1);
-    
+
     resultadosDiv.innerHTML = `
         <div class="resultados-container animate-slideIn">
             <h3 class="text-center mb-4">📊 Resultados de tu Consumo Eléctrico</h3>
@@ -271,31 +271,31 @@ function mostrarResultados(consumoTotal, detalles) {
             </div>
         </div>
     `;
-    
+
     resultadosDiv.style.display = 'block';
     resultadosDiv.scrollIntoView({ behavior: 'smooth' });
 }
 
 // Inicialización cuando se carga la página
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Agregar el primer dispositivo automáticamente
     agregarDispositivo();
-    
+
     // Event listener para el formulario
     const form = document.getElementById('formularioCalculo');
     if (form) {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
             calcularConsumo();
         });
     }
-    
+
     // Event Dispositivos creados
     const btnAgregar = document.getElementById('btn-agregar-dispositivo');
     if (btnAgregar) {
         btnAgregar.addEventListener('click', agregarDispositivo);
     }
-    
+
     // Animaciones
     setTimeout(() => {
         document.body.classList.add('loaded');

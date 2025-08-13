@@ -23,7 +23,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    align-items: center; 
+    align-items: center;
     margin: 0;
     padding: 0;
 }
@@ -32,6 +32,7 @@ nav li {
     display: flex;
     align-items: center;
 }
+
 nav a {
     text-decoration: none;
     color: #000;
@@ -69,56 +70,58 @@ footer {
     height: 350px;
     object-fit: cover;
 }
+
 /* Menú hamburguesa escondido por defecto */
 #menu-toggle {
-  display: none;
+    display: none;
 }
 
 .menu-icon {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
+
 .logo img {
-  height: 80px; 
-  margin-right: 0.5rem;
-  vertical-align: middle;
+    height: 80px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
 }
 
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    background: #e0f0ff;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    display: none;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-  }
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #e0f0ff;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        display: none;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
 
-  nav ul li {
-    width: 100%;
-    margin: 0.5rem 0;
-  }
+    nav ul li {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
 
-  .menu-icon {
-    display: block;
-  }
+    .menu-icon {
+        display: block;
+    }
 
-  #menu-toggle:checked + .menu-icon + nav ul {
-    display: flex;
-  }
+    #menu-toggle:checked+.menu-icon+nav ul {
+        display: flex;
+    }
 }
 
 .fondo {
-    background: linear-gradient(135deg, rgba(227, 242, 253, 0.9), rgba(187, 222, 251, 0.9)), 
-                url(../IMG/font.jpg);
+    background: linear-gradient(135deg, rgba(227, 242, 253, 0.9), rgba(187, 222, 251, 0.9)),
+        url(../IMG/font.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -164,6 +167,7 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -175,6 +179,7 @@ footer {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -186,6 +191,7 @@ footer {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -197,26 +203,27 @@ footer {
         opacity: 0;
         transform: scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
 
-.animate-fadeInUp { 
-    animation: fadeInUp 0.8s ease-out; 
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
 }
 
-.animate-slideInLeft { 
-    animation: slideInLeft 0.8s ease-out; 
+.animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
 }
 
-.animate-slideInRight { 
-    animation: slideInRight 0.8s ease-out; 
+.animate-slideInRight {
+    animation: slideInRight 0.8s ease-out;
 }
 
-.animate-scaleIn { 
-    animation: scaleIn 0.6s ease-out; 
+.animate-scaleIn {
+    animation: scaleIn 0.6s ease-out;
 }
 
 /* ========== RESPONSIVE IMPROVEMENTS ========== */
@@ -224,7 +231,7 @@ footer {
     header {
         padding: 1rem 1.5rem;
     }
-    
+
     .container {
         max-width: 95%;
     }
@@ -236,7 +243,7 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .carousel-inner img {
         height: 250px;
     }
@@ -247,24 +254,24 @@ footer {
         padding: 0.8rem 1rem;
         flex-wrap: wrap;
     }
-    
+
     .logo {
         font-size: 1.2rem;
     }
-    
+
     .logo img {
         height: 60px;
     }
-    
+
     .hero {
         padding: 1rem;
         gap: 1rem;
     }
-    
+
     .carousel-inner img {
         height: 200px;
     }
-    
+
     footer {
         padding: 1.5rem 1rem;
         text-align: center;
@@ -275,23 +282,23 @@ footer {
     header {
         padding: 0.5rem;
     }
-    
+
     .logo {
         font-size: 1rem;
     }
-    
+
     .logo img {
         height: 50px;
     }
-    
+
     .hero {
         padding: 0.8rem;
     }
-    
+
     .carousel-inner img {
         height: 180px;
     }
-    
+
     nav a {
         padding: 0.3rem;
         font-size: 0.9rem;

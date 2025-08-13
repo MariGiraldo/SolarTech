@@ -1,31 +1,30 @@
-
-    #contenido{
-        min-height: 100vh;
-        max-height: 250vh;
-        align-items: center;
-    }
-    
-    
-  
-    
-    /*grafico de barras*/
-    #grafico{
-        width: 80%;
-        min-height: 20vh;
-        max-height: 60vh;
-        margin-top: 4% !important;
-        margin: auto;
-        
-    }
+#contenido {
+    min-height: 100vh;
+    max-height: 250vh;
+    align-items: center;
+}
 
 
-  /*tabla de datos*/
-  #tabulacion{
+
+
+/*grafico de barras*/
+#grafico {
+    width: 80%;
+    min-height: 20vh;
+    max-height: 60vh;
+    margin-top: 4% !important;
+    margin: auto;
+
+}
+
+
+/*tabla de datos*/
+#tabulacion {
     width: 80%;
     height: 50vh;
-    overflow:auto ;
+    overflow: auto;
     margin-top: 3%;
     margin-left: 10%;
     margin-bottom: 4%;
     border: solid black;
-   }
+}

@@ -12,8 +12,13 @@ body.loaded {
 }
 
 @keyframes fadeInBody {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Tarjetas grandes tipo secciones */
@@ -90,10 +95,12 @@ body.loaded {
     font-size: 1.2rem;
   }
 }
-.container-fluid{
-      background-image: url(../IMG/fondoCalc.jpg);
+
+.container-fluid {
+  background-image: url(../IMG/fondoCalc.jpg);
 
 }
+
 .imagenInfo {
   width: 250%;
   max-width: 110%;
@@ -108,54 +115,109 @@ body.loaded {
   .imagenInfo {
     margin-top: 1rem;
     border-radius: 0.5rem;
-      max-width: 100%;
+    max-width: 100%;
   }
 }
 
 /* ========== ANIMACIONES ========== */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(30px); 
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
 }
 
 @keyframes bounce {
-  0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
-  40%, 43% { transform: translate3d(0, -10px, 0); }
-  70% { transform: translate3d(0, -5px, 0); }
-  90% { transform: translate3d(0, -2px, 0); }
+
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.animate-fadeIn { animation: fadeIn 0.5s ease-out; }
-.animate-slideIn { animation: slideIn 0.6s ease-out; }
-.animate-fadeOut { animation: fadeOut 0.3s ease-out; }
-.animate-pulse { animation: pulse 0.5s ease-out; }
-.animate-bounce { animation: bounce 2s infinite; }
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.6s ease-out;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.3s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 0.5s ease-out;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
 
 /* ========== LOADING SCREEN ========== */
 .loading-screen {
@@ -268,7 +330,8 @@ body.loaded {
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
   border: 2px solid #e2e8f0;
   border-radius: 10px;
   padding: 12px;
@@ -276,7 +339,8 @@ body.loaded {
   background: white;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
   border-color: #3b82f6;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   outline: none;
@@ -444,7 +508,7 @@ body.loaded {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1200px) {
-  .dispositivo-card .row > div {
+  .dispositivo-card .row>div {
     margin-bottom: 15px;
   }
 }
@@ -454,29 +518,29 @@ body.loaded {
     padding: 20px;
     margin: 10px;
   }
-  
+
   .dispositivo-card {
     padding: 15px;
   }
-  
+
   .dispositivo-header {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
   }
-  
+
   .btn-eliminar {
     align-self: flex-end;
   }
-  
+
   .resultado-card .numero {
     font-size: 2rem;
   }
-  
+
   .solar-numero {
     font-size: 1.5rem;
   }
-  
+
   .resultados-container {
     padding: 20px;
   }
@@ -487,18 +551,17 @@ body.loaded {
     padding: 15px;
     margin: 5px;
   }
-  
+
   .dispositivo-card {
     padding: 12px;
   }
-  
+
   .resultado-card .numero {
     font-size: 1.8rem;
   }
-  
+
   .btn-calcular {
     padding: 12px 25px;
     font-size: 1rem;
   }
 }
-
