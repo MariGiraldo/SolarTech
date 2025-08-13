@@ -1,0 +1,148 @@
+@media(min-width:791px){
+
+    
+/*contenido*/
+#contenido{
+    width: 100%;
+    min-height: 70vh;
+    min-height: 88vh;
+
+    padding-top: 3%;
+    padding-left: 4%;
+    padding-right: 2%;
+
+}
+
+
+.grafico{
+
+   margin-right: 2%;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+   box-shadow: 7px 5px 7px 7px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+   transition: 1.5s ;
+   overflow: hidden;
+   position: relative;
+   background-color: white;
+   z-index: 1;
+}
+
+/*clase padre de las secciones*/
+
+.grupo1{    
+    display: flex;
+    align-items: center;
+}
+
+.grupo2{
+    padding-top: 1%;
+    text-align: center;
+}
+
+.contenedor-interno{
+    width: 80%;
+    height: 20vh;
+    margin: auto;
+}
+
+/*seccion grafico tabla*/
+.grafico.tabla{
+
+    width: 28%;
+    height: 74vh;
+    float: left;
+    text-align: center;
+    padding-top: 1.5%;
+
+}
+
+.table{
+    margin-left: 10%;
+    width: 80%;
+    margin: auto;
+    border: 1.5px solid black;
+}
+
+th{
+    border: 1.5px solid black;
+}
+
+
+/*seccion grafico torta*/
+.grafico.torta{
+
+    width: 38%;
+    height: 35vh;
+    float: left;
+}
+
+
+
+#grafico-torta{
+    width: 50%;
+    height: 30vh;
+    padding: 0%;
+    margin-left: 9%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h1{
+    margin-top: 10%;
+}
+
+
+/*seccion grafico linea*/
+.grafico.linea{
+
+    width: 28%;
+    height: 35vh;
+    float: right;
+    
+    
+}
+
+
+
+/* seccion grafico barra*/
+.grafico.barra{
+    width: 28%;
+    height: 35vh;
+    float: left;
+    margin-top: 2%;
+    
+}
+
+
+/*seccion grafico area*/
+.grafico.area{
+
+    width: 38%;
+    height: 35vh;
+    float: right;
+    margin-top: 2%;
+    
+}
+
+#grafico-area{
+    width: 40%;
+    height: 30vh;
+    margin-left: 9%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5%;
+}
+
+
+
+/* efecto de agrandado de las secciones*/
+.grafico:hover{
+    
+    z-index: 2;
+    transform: scale(1.1);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+   box-shadow: 7px 5px 7px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+}

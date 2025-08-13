@@ -1,0 +1,57 @@
+
+
+#contenido{
+    width: 100%;
+    max-height: 90vh;
+}
+
+
+
+/*seccion de consultas*/
+
+#consultas{
+    
+    margin-left: 10%;
+    margin-top: 1%;
+    width: 80%;
+    display: flex;
+
+}
+
+/*tabla*/
+
+#tabulacion{
+    margin-left: 10%;
+    width: 80%;
+    height: 60vh;
+    overflow-y:auto ;
+    margin-bottom: 2%;
+    border: solid black;
+    margin-top: 2%;
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+
+
+thead {
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    text-align: center;
+
+}
+
+th{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+tr:hover, th:hover{
+    background: rgb(162, 158, 158);
+}
